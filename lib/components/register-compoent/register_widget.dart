@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:meow_meow_app/utils/app_color.dart';
 
 class RegisterWidget extends StatelessWidget {
-  RegisterWidget({super.key,});
+  RegisterWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,26 +15,35 @@ class RegisterWidget extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Divider(
-                // color: AppColor.grey,
-                ),
-            Text(
-              'Or',
-              style: TextStyle(color: AppColor.grey),
+            Expanded(
+              child: Divider(
+                color: Colors.grey,
+                thickness: 1,
+              ),
             ),
-            Divider(
-                // color: AppColor.grey,
-                ),
+            Padding(
+              padding: EdgeInsets.only(left: 15,right: 15),
+              child: Text(
+                'หรือ',
+                style: TextStyle(color: AppColor.grey),
+              ),
+            ),
+            Expanded(
+              child: Divider(
+                color: Colors.grey,
+                thickness: 1,
+              ),
+            ),
           ],
         ),
         SizedBox(
-          height: Get.height * 0.01,
+          height: Get.height * 0.02,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 print("Register Facebook");
               },
               child: Container(
@@ -64,7 +73,7 @@ class RegisterWidget extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 print("Register Google");
               },
               child: Container(
