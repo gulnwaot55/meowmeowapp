@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:meow_meow_app/utils/app_color.dart';
 
 class AppField extends StatelessWidget {
@@ -18,6 +17,8 @@ class AppField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return isPassword != true
         ? Column(
             children: [
@@ -40,7 +41,7 @@ class AppField extends StatelessWidget {
                   ),
                   icon: Image.asset(
                     imgPath,
-                    width: Get.width * 0.05,
+                    width: w * 0.05,
                   ),
                   border: InputBorder.none,
                   isDense: true,
@@ -71,7 +72,7 @@ class AppField extends StatelessWidget {
                   ),
                   icon: Image.asset(
                     imgPath,
-                    width: Get.width * 0.05,
+                    width: w * 0.05,
                   ),
                   border: InputBorder.none,
                   isDense: true,

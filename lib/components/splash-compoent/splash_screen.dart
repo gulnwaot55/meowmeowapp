@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -7,10 +6,12 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var padding = MediaQuery.of(context).padding;
-    double newHeight = Get.height - padding.top - padding.bottom;
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
+    double newHeight = h - padding.top - padding.bottom;
     return Scaffold(
       body: SizedBox(
-        width: Get.width,
+        width: w,
         child: Stack(
           children: [
             Positioned(
@@ -35,7 +36,7 @@ class SplashScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: 0,
-              left: Get.width / 3 - 50,
+              left: w / 3 - 50,
               child: Image.asset(
                 'assets/images/spbtcenter.png',
                 width: newHeight * 0.35,

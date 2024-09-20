@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:meow_meow_app/utils/app_color.dart';
 
 class RegisterWidget extends StatelessWidget {
@@ -9,6 +8,8 @@ class RegisterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -37,7 +38,7 @@ class RegisterWidget extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: Get.height * 0.02,
+          height: h * 0.02,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,8 +48,8 @@ class RegisterWidget extends StatelessWidget {
                 print("Register Facebook");
               },
               child: Container(
-                width: Get.width * 0.4,
-                height: Get.height * 0.05,
+                width: w * 0.4,
+                height: h * 0.05,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: AppColor.white,
@@ -62,10 +63,10 @@ class RegisterWidget extends StatelessWidget {
                   children: [
                     Image.asset(
                       'assets/images/facebooklogo.png',
-                      width: Get.width * 0.075,
+                      width: w * 0.075,
                     ),
                     SizedBox(
-                      width: Get.width * 0.02,
+                      width: w * 0.02,
                     ),
                     const Text('Facebook'),
                   ],
@@ -77,8 +78,8 @@ class RegisterWidget extends StatelessWidget {
                 print("Register Google");
               },
               child: Container(
-                width: Get.width * 0.4,
-                height: Get.height * 0.05,
+                width: w * 0.4,
+                height: h * 0.05,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: AppColor.white,
@@ -92,10 +93,10 @@ class RegisterWidget extends StatelessWidget {
                   children: [
                     Image.asset(
                       'assets/images/googlelogo.webp',
-                      width: Get.width * 0.1,
+                      width: w * 0.1,
                     ),
                     SizedBox(
-                      width: Get.width * 0.01,
+                      width: w * 0.01,
                     ),
                     const Text('Google'),
                   ],

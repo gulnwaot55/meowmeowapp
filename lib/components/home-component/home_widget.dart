@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 import 'package:meow_meow_app/utils/app_color.dart';
+import 'package:meow_meow_app/utils/app_constant.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return AppBar(
       leading: Padding(
         padding: const EdgeInsets.all(1.5),
@@ -25,7 +27,7 @@ class AppBarWidget extends StatelessWidget {
           child: Image.asset(
             'assets/images/heart.png',
             fit: BoxFit.cover,
-            width: Get.width * 0.08,
+            width: w * 0.08,
           ),
         )
       ],
@@ -38,6 +40,8 @@ class AppBarSearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return TextField(
       textAlign: TextAlign.start,
       decoration: InputDecoration(
@@ -47,7 +51,7 @@ class AppBarSearchWidget extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Image.asset(
             'assets/images/search.png',
-            width: Get.width * 0.05,
+            width: w * 0.05,
           ),
         ),
         border: OutlineInputBorder(
@@ -81,8 +85,10 @@ class BottomNavBarApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Container(
-      height: Get.height * 0.1,
+      height: h * 0.1,
       color: AppColor.white,
       child: Row(
         children: [

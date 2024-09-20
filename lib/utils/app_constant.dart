@@ -1,10 +1,10 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class AppConstant {
-  static bool isEn() {
-    return Get.locale.toString() == 'en_EN' ? true : false;
+
+  static void init(BuildContext context) {
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
   }
-  static String getCurrentLanguege() {
-    return isEn() ? "en" : "th";
-  }
+  
 }

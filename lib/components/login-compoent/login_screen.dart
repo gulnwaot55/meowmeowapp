@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:meow_meow_app/components/home-component/home_screen.dart';
 import 'package:meow_meow_app/components/register-compoent/register_screen.dart';
 import 'package:meow_meow_app/utils/app_button.dart';
@@ -10,6 +9,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -18,7 +19,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/images/logoapp.png', width: Get.width * 1),
+              Image.asset('assets/images/logoapp.png', width: w * 1),
               Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Column(
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                       isRequired: false,
                     ),
                     SizedBox(
-                      height: Get.height * 0.01,
+                      height: h * 0.01,
                     ),
                     AppField(
                       isPassword: true,
@@ -41,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: Get.height * 0.05,
+                height: h * 0.05,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
@@ -49,16 +50,16 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     AppButton(
                       textbutton: 'เข้าสู่ระบบ',
-                      width: Get.width,
-                      height: Get.height * 0.05,
+                      width: w,
+                      height: h * 0.05,
                       isOrange: true,
                       onTap: (){
                         print("Go to Home Screen");
-                        Get.offAll(()=> const HomeScreen());
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
                       },
                     ),
                     SizedBox(
-                      height: Get.height * 0.02,
+                      height: h * 0.02,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,15 +69,17 @@ class LoginScreen extends StatelessWidget {
                             print("Click ลืมรหัส");
                           },
                           textbutton: 'ลืมรหัสผ่าน',
-                          width: Get.width * 0.35,
-                          height: Get.height * 0.05,
+                          width:w * 0.35,
+                          height: h * 0.05,
                           isOrange: false,
                         ),
                         AppButton(
-                          onTap: () => Get.to(()=> const RegisterScreen()),
+                          onTap: (){
+                            Navigator.pop(context, MaterialPageRoute(builder: (context)=> RegisterScreen()));
+                          },
                           textbutton: 'สมัครสมาชิก',
-                          width: Get.width * 0.35,
-                          height: Get.height * 0.05,
+                          width: w * 0.35,
+                          height: h * 0.05,
                           isOrange: false,
                         ),
                       ],
